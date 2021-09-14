@@ -1,18 +1,18 @@
 package co.org.escuelaing.networking.webappexample;
 
 import co.org.escuelaing.networking.nextspring.Component;
-import co.org.escuelaing.networking.nextspring.GetMapping;
+import co.org.escuelaing.networking.nextspring.RequestMapping;
 
 @Component
 public class MathServices {
     
-    @GetMapping("/square")
+    @RequestMapping("/square")
     public static Double square(String n){
         Double number = Double.parseDouble(n);
         return number*number;
     }
 
-    @GetMapping("/status")
+    @RequestMapping("/status")
     public static String status(String param){
         return "Running";
     }

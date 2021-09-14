@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.List;
 
-import co.org.escuelaing.networking.nextspring.GetMapping;
+import co.org.escuelaing.networking.nextspring.RequestMapping;
 
 public class HttpServer {
     private static HttpServer _instance = new HttpServer();
@@ -64,8 +64,8 @@ public class HttpServer {
             try {
                 c = Class.forName(component);
                 for (Method m : c.getDeclaredMethods()) {
-                    if (m.isAnnotationPresent(GetMapping.class)) {
-                        String uri = m.getAnnotation(GetMapping.class).value();
+                    if (m.isAnnotationPresent(RequestMapping.class)) {
+                        String uri = m.getAnnotation(RequestMapping.class).value();
                         services.put(uri, m);
                     }
                 }
