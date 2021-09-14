@@ -11,4 +11,9 @@ public class MathServices {
         Double number = Double.parseDouble(n);
         return number*number;
     }
+
+    @GetMapping("/status")
+    public static String status(String param){
+        return "Running";
+    }
 }

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.List;
 
 import co.org.escuelaing.networking.nextspring.GetMapping;
 
@@ -27,11 +28,11 @@ public class HttpServer {
         return _instance;
     }
 
-    public static void main(String... args) throws IOException, URISyntaxException {
+    /*public static void main(String... args) throws IOException, URISyntaxException {
         HttpServer.getInstance().startServer(args);
-    }
+    }*/
 
-    public void startServer(String[] args) throws IOException, URISyntaxException {
+    public void startServer(List<String> args) throws IOException, URISyntaxException {
         int port = 35000;
         ServerSocket serverSocket = null;
         try {
@@ -57,7 +58,7 @@ public class HttpServer {
         serverSocket.close();
     }
 
-    private void loadComponents(String[] componentsList) {
+    private void loadComponents(List<String> componentsList) {
         for (String component : componentsList) {
             Class c = null;
             try {
